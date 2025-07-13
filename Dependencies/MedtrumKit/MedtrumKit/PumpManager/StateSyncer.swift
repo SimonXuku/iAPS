@@ -48,6 +48,10 @@ func syncState(
     if let battery = syncResponse.battery {
         state.battery = battery.voltageB
     }
+    
+    if let prime = syncResponse.primeProgress {
+        state.primeProgress = prime
+    }
 
     if let startTime = syncResponse.startTime {
         state.patchActivatedAt = startTime
